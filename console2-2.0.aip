@@ -17,6 +17,8 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="Deskto~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="Progra~1|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
@@ -41,7 +43,7 @@
     <ROW File="console.xml" Component_="console.xml" FileName="console.xml" Attributes="0" SourcePath="Console2\console.xml" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFileName="console2-2.0" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="." PackageFileName="console2-2.0" Languages="en" InstallationType="4" UseLargeSchema="true"/>
     <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
@@ -130,6 +132,10 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
     <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Console2" Directory_="ProgramMenuFolder" Name="Console2" Component_="Console.exe" Target="[#Console.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="Console2_1" Directory_="DesktopFolder" Name="Console2" Component_="Console.exe" Target="[#Console.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
