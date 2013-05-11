@@ -1,4 +1,6 @@
+AIP=console2-2.0.aip
+
 all: installer
 
-installer: console2-2.0.aip
-	AdvancedInstaller /build console2-2.0.aip
+installer: $(AIP)
+	AdvancedInstaller /build $(AIP)
